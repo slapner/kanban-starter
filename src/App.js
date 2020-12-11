@@ -1,10 +1,10 @@
 import { uid } from 'react-uid';
 import Lane from './components/Lane';
 
-import { useTask } from './hooks/useTask';
+import { useBoardStore } from './store/useBoardStore';
 
 function App() {
-	const { laneOrder } = useTask();
+	const laneOrder = useBoardStore((state) => state.laneOrder);
 
 	return (
 		<div className="container mx-auto pt-4">

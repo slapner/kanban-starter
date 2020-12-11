@@ -1,7 +1,7 @@
-import { useTask } from '../hooks/useTask';
+import { useBoardStore } from '../store/useBoardStore';
 
 export default function LaneHeading({ name, canMoveLeft, canMoveRight }) {
-	const { moveLane } = useTask();
+	const { moveLane } = useBoardStore();
 
 	return (
 		<div className="bg-blue-800 text-white text-center p-3 rounded-t-md flex">

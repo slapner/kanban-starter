@@ -4,10 +4,10 @@ import Task from './Task';
 import TaskCard from './TaskCard';
 import { uid } from 'react-uid';
 
-import { useTask } from '../hooks/useTask';
+import { useBoardStore } from '../store/useBoardStore';
 
 export default function Lane({ name }) {
-	const { board, laneOrder, addTask } = useTask();
+	const { board, laneOrder, addTask } = useBoardStore();
 	const handleClick = () =>
 		addTask(name, `Created ${name} task ${new Date().getTime()}`);
 

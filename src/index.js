@@ -4,13 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { TaskProvider } from './useTask';
-
 ReactDOM.render(
 	<React.StrictMode>
-		<TaskProvider>
-			<App />
-		</TaskProvider>
+		<App />
 	</React.StrictMode>,
 	document.getElementById('root')
 );

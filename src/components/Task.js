@@ -1,8 +1,8 @@
 import TaskCard from './TaskCard';
-import { useTask } from './useTask';
+import { useBoardStore } from '../store/useBoardStore';
 
 export default function Task({ value, lane, canMoveLeft, canMoveRight }) {
-	const { move } = useTask();
+	const { move } = useBoardStore();
 
 	return (
 		<TaskCard>
