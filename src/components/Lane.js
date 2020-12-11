@@ -4,7 +4,7 @@ import Task from './Task';
 import TaskCard from './TaskCard';
 import { uid } from 'react-uid';
 
-import { useTask } from './useTask';
+import { useTask } from '../hooks/useTask';
 
 export default function Lane({ name }) {
 	const { board, laneOrder, addTask } = useTask();

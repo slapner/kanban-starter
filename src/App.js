@@ -1,7 +1,7 @@
 import { uid } from 'react-uid';
-import Lane from './Lane';
+import Lane from './components/Lane';
 
-import { useTask } from './useTask';
+import { useTask } from './hooks/useTask';
 
 function App() {
 	const { laneOrder } = useTask();

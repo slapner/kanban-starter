@@ -1,4 +1,4 @@
-import { useTask } from './useTask';
+import { useTask } from '../hooks/useTask';
 
 export default function LaneHeading({ name, canMoveLeft, canMoveRight }) {
 	const { moveLane } = useTask();
