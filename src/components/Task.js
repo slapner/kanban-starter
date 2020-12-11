@@ -1,17 +1,31 @@
+import { useDispatch } from 'react-redux';
+
 import TaskCard from './TaskCard';
-import { useTask } from '../hooks/useTask';
+import { move } from '../store/boardSlice';
 
 export default function Task({ value, lane, canMoveLeft, canMoveRight }) {
-	const { move } = useTask();
+	const dispatch = useDispatch();
 
 	return (
 		<TaskCard>
 			{canMoveLeft && (
-				<button onClick={() => move('left', lane, value)}>&lt;</button>
+				<button
+					onClick={() =>
+						dispatch(move({ dir: 'left', fromLane: lane, task: value }))
+					}
+				>
+					&lt;
+				</button>
 			)}
 			<span className="px-2 flex-grow">{value}</span>
 			{canMoveRight && (
-				<button onClick={() => move('right', lane, value)}>&gt;</button>
+				<button
+					onClick={() =>
+						dispatch(move({ dir: 'right', fromLane: lane, task: value }))
+					}
+				>
+					&gt;
+				</button>
 			)}
 		</TaskCard>
 	);

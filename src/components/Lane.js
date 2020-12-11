@@ -4,12 +4,22 @@ import Task from './Task';
 import TaskCard from './TaskCard';
 import { uid } from 'react-uid';
 
-import { useTask } from '../hooks/useTask';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { addTask, selectBoard, selectLaneOrder } from '../store/boardSlice';
 
 export default function Lane({ name }) {
-	const { board, laneOrder, addTask } = useTask();
+	const dispatch = useDispatch();
+	const board = useSelector(selectBoard);
+	const laneOrder = useSelector(selectLaneOrder);
+
 	const handleClick = () =>
-		addTask(name, `Created ${name} task ${new Date().getTime()}`);
+		dispatch(
+			addTask({
+				lane: name,
+				value: `Created ${name} task ${new Date().getTime()}`,
+			})
+		);
 
 	const canMoveLeft = laneOrder.indexOf(name) > 0;
 	const canMoveRight = laneOrder.indexOf(name) < laneOrder.length - 1;

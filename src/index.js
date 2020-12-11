@@ -6,10 +6,15 @@ import reportWebVitals from './reportWebVitals';
 
 import { TaskProvider } from './hooks/useTask';
 
+import { Provider } from 'react-redux';
+import store from './store/store';
+
 ReactDOM.render(
 	<React.StrictMode>
 		<TaskProvider>
-			<App />
+			<Provider store={store}>
+				<App />
+			</Provider>
 		</TaskProvider>
 	</React.StrictMode>,
 	document.getElementById('root')

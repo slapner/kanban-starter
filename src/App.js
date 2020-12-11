@@ -1,10 +1,11 @@
 import { uid } from 'react-uid';
 import Lane from './components/Lane';
 
-import { useTask } from './hooks/useTask';
+import { useSelector } from 'react-redux';
+import { selectLaneOrder } from './store/boardSlice';
 
 function App() {
-	const { laneOrder } = useTask();
+	const laneOrder = useSelector(selectLaneOrder);
 
 	return (
 		<div className="container mx-auto pt-4">
