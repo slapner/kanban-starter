@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { TaskProvider } from './useTask';
+import { TaskProvider } from './hooks/useTask';
 
 ReactDOM.render(
 	<React.StrictMode>

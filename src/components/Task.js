@@ -1,5 +1,5 @@
 import TaskCard from './TaskCard';
-import { useTask } from './useTask';
+import { useTask } from '../hooks/useTask';
 
 export default function Task({ value, lane, canMoveLeft, canMoveRight }) {
 	const { move } = useTask();
