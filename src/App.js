@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { uid } from 'react-uid';
+import Lane from './Lane';
+
+import { useTask } from './useTask';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const { laneOrder } = useTask();
+
+	return (
+		<div className="container mx-auto pt-4">
+			<div className="grid grid-cols-3 gap-4">
+				{laneOrder.map((item) => (
+					<Lane name={item} key={uid(item)} />
+				))}
+			</div>
+		</div>
+	);
 }
 
 export default App;
